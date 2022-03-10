@@ -23,6 +23,10 @@ from django.urls import include
 
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('api/', include('api.urls')), 
+    path('task/', views.apiOverview, name='api-overview'),
+    path('task-list/', views.tasklist, name='task-list'),
+    path('task-detail/<str:pk>/',views.taskdetail,name='task-detail'),
+    path('create-task/',views.createtask,name='create-task'),
+    path('update-task/<str:pk>/',views.updatetask,name='update-task'),
+    path('delete-task/<str:pk>/',views.deletetask,name='delete-task'),
 ]
