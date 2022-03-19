@@ -41,7 +41,9 @@ def createtask(request):
 
     if serializer.is_valid():
         serializer.save()
-    return Response(serializer.data)
+        print('get data from serializer: ',serializer.data)
+        print(serializer.data)
+    return Response('Task Created')
 
 @api_view(['POST'])
 def updatetask(request,pk):
